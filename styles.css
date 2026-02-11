@@ -1,0 +1,262 @@
+:root {
+  --bg-1: #0f1117;
+  --bg-2: #1d222f;
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-strong: rgba(255, 255, 255, 0.14);
+  --text: #f4f6ff;
+  --text-dim: #d2d8ec;
+  --accent: #ff6b5f;
+  --accent-2: #6ad7ff;
+  --ring: #ffd7aa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(106, 215, 255, 0.16), transparent 55%),
+    radial-gradient(900px 500px at -10% 15%, rgba(255, 107, 95, 0.18), transparent 55%),
+    linear-gradient(165deg, var(--bg-1), var(--bg-2));
+  line-height: 1.65;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 12px;
+  background: #ffffff;
+  color: #111;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.container {
+  width: min(1080px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(8, 10, 15, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+nav {
+  display: flex;
+  gap: 0.9rem;
+}
+
+nav a,
+a {
+  color: var(--accent-2);
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover,
+a:hover {
+  color: #9ee8ff;
+}
+
+.hero {
+  padding: 5.6rem 0 2.4rem;
+}
+
+.hero-small {
+  padding-top: 4rem;
+}
+
+.eyebrow {
+  font-family: "Sora", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin: 0 0 0.85rem;
+  color: #ffd2cc;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Sora", sans-serif;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.05rem, 4.3vw, 3.6rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.lede {
+  color: var(--text-dim);
+  max-width: 72ch;
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.45rem;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--accent), #ff8468);
+  color: #111;
+  font-weight: 700;
+  padding: 0.72rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.button-muted {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.section-grid {
+  padding: 1.2rem 0 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.card-wide {
+  grid-column: span 12;
+  background: linear-gradient(145deg, rgba(255, 107, 95, 0.2), rgba(106, 215, 255, 0.06));
+}
+
+.section-grid .card:nth-child(2),
+.section-grid .card:nth-child(3) {
+  grid-column: span 6;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+li + li {
+  margin-top: 0.45rem;
+}
+
+.payoff {
+  padding: 1.2rem 0 3rem;
+}
+
+.payoff p {
+  margin: 0;
+  background: var(--surface-strong);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.support-grid {
+  padding-bottom: 2rem;
+}
+
+.legal-card {
+  margin-bottom: 2.3rem;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 1rem 0 1.6rem;
+  color: #d4dbf2;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(1080px, calc(100% - 1.4rem));
+  }
+
+  .hero {
+    padding-top: 4.4rem;
+  }
+
+  .section-grid .card:nth-child(2),
+  .section-grid .card:nth-child(3) {
+    grid-column: span 12;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
